@@ -48,25 +48,25 @@ http://localhost/HealthMate
 ## 📸 Website Screenshots
 
 ### 🏠 Home Page
-![Home Page](homePage.png)
+![Home Page](screenshots/homePage.png)
 
 ### 🔐 User Login
-![Login](userLogin.png)
+![Login](screenshots/userLogin.png)
 
 ### 📝 Health Assessment Quiz
-![Quiz](generatePlan.png)
+![Quiz](screenshots/generatePlan.png)
 
 ### 🥗 Personalized Diet Recommendation
-![Diet Plan](dietPlan.png)
+![Diet Plan](screenshots/dietPlan.png)
 
 ### 👩‍⚕️ Nutritionist Dashboard
-![Nutritionist Dashboard](nutritionistPage.png)
+![Nutritionist Dashboard](screenshots/nutritionistPage.png)
 
 ### 🛠️ Admin Dashboard
-![Admin Dashboard](adminHome.png)
+![Admin Dashboard](screenshots/adminHome.png)
 
 ### 👩‍⚕️ User Queries to Nutritionist
-![Admin Dashboard](askNutritionist.png)
+![Admin Dashboard](screenshots/askNutritionist.png)
 
 ## 🌟 Future Enhancements
 
