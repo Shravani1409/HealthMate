@@ -11,9 +11,34 @@ if (!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness Plate</title>
+    <title>HealthMate</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
     <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script>
+    <style>
+    /* Custom styling for welcome area */
+    .login-btn {
+      background-color: #2bc058;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      float: right;
+      margin: 20px;
+      cursor: pointer;
+    }
+    .login-btn:hover {
+      background-color: #2bc058;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<!-- Continue with your homepage content below -->
+<!-- For example, your "Healthy Cooking Basics" or whatever you had in index.html -->
+
     <style>
         * {
             margin: 0;
@@ -27,45 +52,78 @@ if (!isset($_SESSION['user_id'])) {
             color: #333;
         }
         header {
-            background: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        nav {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            justify-content: space-between;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        .nav-links li {
-            display: inline;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        .auth-buttons a {
-            text-decoration: none;
-            padding: 10px 15px;
-            background: #27ae60;
-            color: white;
-            border-radius: 5px;
-            margin-left: 10px;
-        }
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+         
+button {
+    padding: 10px 16px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+    nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+}
+       .nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+}
+        .auth-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    padding: 8px 12px;
+    background: #27ae60;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
         #hero {
             display: flex;
             align-items: center;
@@ -172,33 +230,159 @@ if (!isset($_SESSION['user_id'])) {
             color: white;
             margin-top: 40px;
         }
+        form {
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.login-btn {
+    background-color: #27ae60;
+}
+
+.login-btn:hover {
+    background-color: #219150;
+}
+
+/* Optional @media for fine-tuning */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .auth-buttons {
+        margin-top: 10px;
+    }
+
+    #hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 90%;
+        margin-top: 15px;
+    }
+}
     </style>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+  }
+
+  #plans-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #plans-container h4 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+  #plans-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #plans-container li {
+    background-color: #ecf0f1;
+    margin: 10px 0;
+    padding: 12px 15px;
+    border-left: 5px solid #3498db;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+
+  #plans-container li:hover {
+    background-color: #dfe6e9;
+  }
+
+  select, #getPlanBtn {
+    padding: 10px 14px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid #bdc3c7;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+  }
+
+  select:focus, #getPlanBtn:focus {
+    border-color: #3498db;
+  }
+
+  #getPlanBtn {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  #getPlanBtn:hover {
+    background-color: #2980b9;
+  }
+
+  .controls {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) {
+    select, #getPlanBtn {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+    }
+  }
+</style>
 
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">Wellness Plate</div>
+            <div class="logo">HealthMate</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="healthy-recipes.html">Diet Recipes basics</a></li>
                 <li><a href="fitness-basics.html">Fitness</a></li>
             </ul>
             <div class="auth-buttons">
-                <a href="register.html" class="btn">Register</a>
-                <a href="login.html" class="btn">Login</a>
+                <a href="register.html" class="btn">User Register</a>
+                <a href="login.html" class="btn">User Login</a>
+                <a href="nutritionist_register.php" class="btn">Become Nutritionist</a>
             </div>
         </nav>
     </header>
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Welcome to Wellness Plate</h1>
+            <h1>Welcome to HealthMate</h1>
             <p>Your guide to a healthier lifestyle with expert diet tips and fitness insights.</p>
             <a href="#in-this-section" class="btn">Learn More</a>
         </div>
-        <img src="https://i.ibb.co/JwCmPhJj/1.jpg" alt="Healthy Lifestyle" class="hero-image">
+        <img src="https://i.ibb.co/HfqwhZj2/health.jpg" alt="Healthy Lifestyle" class="hero-image">
     </section>
 
   	<section id="in-this-section" class="scroll-target section-container">
@@ -232,7 +416,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
     <footer>
-        <p>&copy; 2025 Wellness Plate. All Rights Reserved.</p>
+        <p>&copy; 2025 HealthMate. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

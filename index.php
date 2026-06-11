@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    header("Location: login_process.php");
+    header("Location: index.html");
     exit();
 }
 
@@ -29,8 +29,9 @@ $conn->close();
 <head>
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness Plate</title>
+    <title>HealthMate</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
     <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script>
   <style>
     /* Custom styling for welcome area */
@@ -56,12 +57,13 @@ $conn->close();
     }
   </style>
 </head>
+
 <body>
 
 
-<div class="welcome-message">
-  Welcome, <strong><?php echo htmlspecialchars($user_name); ?></strong>! 🌿
-</div>
+  <div class="welcome-message">
+    Welcome, <strong><?php echo htmlspecialchars($user_name); ?></strong>! 🌿
+  </div>
 
 <!-- Continue with your homepage content below -->
 <!-- For example, your "Healthy Cooking Basics" or whatever you had in index.html -->
@@ -367,7 +369,7 @@ button:hover {
 
     <header>
     <nav>
-        <div class="logo">Wellness Plate</div>
+        <div class="logo">HealthMate</div>
         <ul class="nav-links">
             <li><button onclick="window.location.href='view_plan.php'">View My Diet Plan</button></li>
             <li><a href="healthy-recipes.php">Diet Recipes basics</a></li>
@@ -381,11 +383,11 @@ button:hover {
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Welcome to Wellness Plate</h1>
+            <h1>Welcome to HealthMate</h1>
             <p>Your guide to a healthier lifestyle with expert diet tips and fitness insights.</p>
             <a href="#in-this-section" class="btn">Learn More</a>
         </div>
-        <img src="https://i.ibb.co/JwCmPhJj/1.jpg" alt="Healthy Lifestyle" class="hero-image">
+        <img src="https://i.ibb.co/HfqwhZj2/health.jpg" alt="Healthy Lifestyle" class="hero-image">
     </section>
 <div style="max-width: 800px; margin: auto; padding: 20px;">
   <h2 style="text-align: center;">Get Your Personalized Diet Plan</h2>
@@ -425,8 +427,14 @@ button:hover {
     <h3>Personalized Diet Plans</h3>
     <p>Select your preferences above to view your personalized plan.</p>
     <div id="plans-container"></div>
+      <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button onclick="window.location.href='ask_nutritionist.php'"
+          style="padding:12px;background:#28a745;color:white;border:none;border-radius:5px;">
+          Ask Nutritionist
+        </button>
+      </div>
+    </div>
   </div>
-</div>
   	<section id="in-this-section" class="scroll-target section-container">
     <h2>In This Section</h2>
 
@@ -629,8 +637,7 @@ button:hover {
 
 
     <footer>
-        <p>&copy; 2025 Wellness Plate. All Rights Reserved.</p>
+        <p>&copy; 2026 HealthMate. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
-
